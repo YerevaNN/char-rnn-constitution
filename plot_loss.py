@@ -1,16 +1,18 @@
 """
-	Takes log files of multiple models and plots the train and validation losses
-	X axis denotes number of interations
+	Takes log files of multiple char-rnn models and plots the train and validation losses
+	X axis denotes number of epochs. Additionally the program outputs training and 
+	validation loss values at the end of the log file.
 	
 	Parameters:
 		windowVal - moving average window size for validation
 		windowTrain - moving average size for train
+		iterationsPerEpoch - number of iterations in one epoch
+		maxEpoch - number of epochs
 
 	Usage:
-		python plot_loss.py [model_log_file]*
+		python plot_loss.py [output_file_name] [model_log_file]*
+		
 
-	Note:
-		'plotname' will be the name of the first model
 """
 
 import numpy as np
@@ -45,7 +47,7 @@ plotname = plotname + '.png'
 
 windowVal = 1
 windowTrain = 200
-iterationsPerEpoch = 171#342
+iterationsPerEpoch = 171 # this should be manually configured
 maxEpoch = 50
 
 minv = 1e8
