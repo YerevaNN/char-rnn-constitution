@@ -1,1 +1,3 @@
-# char-rnn-constitution
+# Generating Constitution using char-rnn in Armenian
+
+
